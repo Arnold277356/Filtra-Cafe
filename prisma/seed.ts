@@ -1,6 +1,12 @@
 const { PrismaClient } = require('@prisma/client')
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: "postgresql://user:password@host:port/database?sslmode=require" 
+    },
+  },
+})
 
 // Standard sizes with pricing
 const SIZES = JSON.stringify([
