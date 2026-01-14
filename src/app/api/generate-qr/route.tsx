@@ -24,8 +24,8 @@ export async function GET(request: NextRequest) {
     }
 
     // Generate QR code URL that includes table number
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
-    const qrData = `${baseUrl}/?table=${parsedTable}`
+    const baseUrl = "https://filtra-cafe.vercel.app";
+    const qrData = `${baseUrl}?table=${tableNumber}`;
 
     // Generate QR code as data URL
     const qrCode = await qrcode.toDataURL(qrData, {
